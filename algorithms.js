@@ -2,7 +2,7 @@
 function minor(a, b) {
 	var minimum = 0;
 	while(a && b){
-  	--a;
+    --a;
     --b;
     ++minimum;
   }
