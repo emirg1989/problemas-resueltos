@@ -9,3 +9,11 @@ function minor(a, b) {
   }
   return minimum;
 }
+
+## 2-Determinar si dos números son iguales, sin usar comparaciones, sumas o restas  ni lbrería Math.
+function isEquals(a, b) {
+  const map = new Map();
+	map.set(a, false);
+	map.set(b, true);
+  return map.get(a);
+}
