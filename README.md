@@ -1,5 +1,5 @@
 # problemas-resueltos
-## 1-Hallar el menor de dos números sin usar condicionales (if, switch) ni operador ternario, ni lbrería Math.
+## 1-Hallar el menor de dos números sin usar condicionales (if, switch) ni operador ternario, ni librería Math. Find the smaller of two numbers without conditionals like if,switch, ternary operator and Math library.
 function minor(a, b) {
 	var minimum = 0;
 	while(a && b){
@@ -10,7 +10,7 @@ function minor(a, b) {
   return minimum;
 }
 
-## 2-Determinar si dos números son iguales, sin usar comparaciones, sumas o restas  ni lbrería Math.
+## 2-Determinar si dos números son iguales, sin usar comparaciones, sumas o restas  ni lbrería Math.Verify if two numbers are equals without comparisons, addition or subtraction or the Math library.
 function isEquals(a, b) {
   const map = new Map();
 	map.set(a, false);
