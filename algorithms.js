@@ -23,9 +23,9 @@ function isEquals(a, b) {
 // ejemplo: array: [1,4,4,1], resultado: 8
 const resultInArray = (numbers, result) => {
   for(var i= 0; i < numbers.length; i++) {
-  	for (var j= i + 1; j < numbers.length; j++) {
-    	if(numbers[i] + numbers[j] === result)
-      	return true;
+    for (var j= i + 1; j < numbers.length; j++) {
+      if(numbers[i] + numbers[j] === result)
+        return true;
     }
   }
   return false;
