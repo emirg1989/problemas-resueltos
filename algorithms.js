@@ -18,3 +18,15 @@ function isEquals(a, b) {
   map.set(b, true);
   return map.get(a);
 }
+
+//2-dado un arreglo y un número de resultado, la suma de 2 números del arreglo debe dar igual al número de resultado, no puedo sumarse a si mismo.
+// ejemplo: array: [1,4,4,1], resultado: 8
+const resultInArray = (numbers, result) => {
+	for(var i= 0; i < numbers.length; i++) {
+  	for (var j= i + 1; j < numbers.length; j++) {
+    	if(numbers[i] + numbers[j] === result)
+      	return true;
+    }
+  }
+  return false;
+}
