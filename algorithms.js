@@ -91,3 +91,22 @@ if(number > -1){
 }else{
 	console.log(":( no te encontré ");
 }
+
+// Imprimir pares de numeros que suman el resultado final
+function printpairs(arr, result)
+    {
+    		let couple = "This doesn't have couple";
+        let dict = {};
+        for (let i = 0; i < arr.length; ++i)
+        {
+            let temp = result - arr[i];
+            if (dict[temp.toString()]) {
+                couple =`${arr[i]} ${dict[temp]}`;
+                return couple;
+            }
+            dict[arr[i]] = arr[i];
+        }
+        return couple;
+    }
+
+console.log(printpairs([0, 1, 3, -3, 1, 3], 6));
