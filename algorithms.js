@@ -19,14 +19,75 @@ function isEquals(a, b) {
   return map.get(a);
 }
 
-//2-dado un arreglo y un número de resultado, la suma de 2 números del arreglo debe dar igual al número de resultado, no puedo sumarse a si mismo.
-// ejemplo: array: [1,4,4,1], resultado: 8
-const resultInArray = (numbers, result) => {
-  for(var i= 0; i < numbers.length; i++) {
-    for (var j= i + 1; j < numbers.length; j++) {
-      if(numbers[i] + numbers[j] === result)
-        return true;
+//3- Contador de palabras en un texto
+//3- Counter of words in a text
+let text = "Hola hola hola hola hola hola hola hola hola! hola!";
+
+function normalizeWord(word){
+	return word.toLowerCase().replace(/[.!,]/g, "");
+}
+
+function wordRepetition(text){
+	let dictionary = {};
+  let separatedWords = text.split(" ");
+  for(let word of separatedWords){
+  	let normWord = normalizeWord(word);
+    console.log(normWord);
+    if(normWord in dictionary){
+    	++dictionary[normWord];
+    }else{
+    	dictionary[normWord] = 1;
     }
   }
-  return false;
+  return dictionary;
+}
+
+//Fibonacci and memoize
+const memoize = (func) => {
+  const cache = {};
+  return (...args) => {
+    const argsKey = JSON.stringify(args);
+    if (!cache[argsKey]) {
+      cache[argsKey] = func(...args);
+    }
+    return cache[argsKey];
+  };
+};
+
+//secuencia fibonacci utilizando recursividad
+const fibonacci = memoize(n => {
+  let result = 0;
+  if(n === 1){
+  	result = 1;
+  } else if(n === 2){
+  	result = 1;
+  }else{
+  	result = fibonacci(n-1) + fibonacci(n-2);
+  }
+	return result;
+});
+for(let i = 1; i< 10; i++) console.log(fibonacci(i));
+
+//Binary search
+function binarySearchRecursion(arr, left, right, objetive){
+	if(right >= left){
+  	let mid= Math.floor((left + right)/2);
+    if(arr[mid] === objetive){
+    	return mid;
+    }
+    if(arr[mid] > objetive){
+    	return binarySearchRecursion(arr, left, mid - 1, objetive);
+    }
+    return binarySearchRecursion(arr, mid + 1, right, objetive);
+  }
+	return -1;
+}
+
+var arr = [0,1,2,3,4,5,6,7,8];
+var objetive = 6;
+var number = binarySearchRecursion(arr, 0, (arr.length - 1), objetive);
+if(number > -1){
+	console.log("I find your in the position: ", number);
+}else{
+	console.log(":( no te encontré ");
 }
