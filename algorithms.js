@@ -101,10 +101,10 @@ function printpairs(arr, result)
         {
             let temp = result - arr[i];
             if (dict[temp.toString()]) {
-                couple =`${arr[i]} ${dict[temp]}`;
+                couple =`${arr[i]} ${arr[dict[temp]]}`;
                 return couple;
             }
-            dict[arr[i]] = arr[i];
+            dict[arr[i]] = i;
         }
         return couple;
     }
