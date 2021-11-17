@@ -42,7 +42,7 @@ function wordRepetition(text){
   return dictionary;
 }
 
-//Fibonacci and memoize
+//4-Fibonacci and memoize
 const memoize = (func) => {
   const cache = {};
   return (...args) => {
@@ -54,7 +54,7 @@ const memoize = (func) => {
   };
 };
 
-//secuencia fibonacci utilizando recursividad
+//5-secuencia fibonacci utilizando recursividad
 const fibonacci = memoize(n => {
   let result = 0;
   if(n === 1){
@@ -68,7 +68,7 @@ const fibonacci = memoize(n => {
 });
 for(let i = 1; i< 10; i++) console.log(fibonacci(i));
 
-//Binary search
+//6-Binary search
 function binarySearchRecursion(arr, left, right, objetive){
 	if(right >= left){
   	let mid= Math.floor((left + right)/2);
